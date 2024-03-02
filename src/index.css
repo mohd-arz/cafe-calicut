@@ -30,12 +30,13 @@
     justify-content: center;
   }
 }
-.open-menu{
+.open-menu {
   bottom: 0;
-  left: 45vw;
-  transform: translateY(70px);
+  left: 50%;
+  transform: translateX(-50%) translateY(70px); 
   transition: transform 0.5s;
 }
-.open-menu-active{
-  transform: translateY(0);
+
+.open-menu-active {
+  transform: translateX(-50%) translateY(0); 
 }

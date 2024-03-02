@@ -20,7 +20,7 @@ function Item({
   const foodArr = Array.from({length:count}, (_ , index) => index + 1);
   return (
     <main>
-      <h1 className='text-5xl text-center text-white px-0 py-4 font-serif shadow-gray-500 shadow-lg' style={{backgroundImage:`url("https://demosites.meridian.net.in/2024/cafecalicut/demo/images/bg1.jpg")`}}>
+      <h1 className='text-3xl md:text-5xl text-center text-white px-0 py-4 font-serif shadow-gray-500 shadow-lg' style={{backgroundImage:`url("https://demosites.meridian.net.in/2024/cafecalicut/demo/images/bg1.jpg")`}}>
         {menu}
       </h1>
       <div className='food-container m-4 sm:m-6 md:m-8'>
