@@ -1,0 +1,46 @@
+[
+  {
+    "menu":"Break Fast",
+    "dishes":[
+      {
+        "img":"https://demosites.meridian.net.in/2024/cafecalicut/demo/images/dummy.jpg",
+        "name":"Creamy mushroom and rooster Wich",
+        "detail":"Fire roasted chicken, tossed with creamy mushrooms, Italian Grana, rocket leaves, in a freshly baked flatbread.",
+        "price":"49"
+      }
+    ]
+  },
+  {
+    "menu":"Sandwich Bar",
+    "dishes":[
+      {
+        "img":"https://demosites.meridian.net.in/2024/cafecalicut/demo/images/dummy2.jpg",
+        "name":"Creamy mushroom and rooster Wich",
+        "detail":"Fire roasted chicken, tossed with creamy mushrooms, Italian Grana, rocket leaves, in a freshly baked flatbread.",
+        "price":"49"
+      }
+    ]
+  },
+  {
+    "menu":"Burgers",
+    "dishes":[
+      {
+        "img":"https://demosites.meridian.net.in/2024/cafecalicut/demo/images/dummy3.jpg",
+        "name":"Creamy mushroom and rooster Wich",
+        "detail":"Fire roasted chicken, tossed with creamy mushrooms, Italian Grana, rocket leaves, in a freshly baked flatbread.",
+        "price":"49"
+      }
+    ]
+  },
+  {
+    "menu":"Pastas",
+    "dishes":[
+      {
+        "img":"https://demosites.meridian.net.in/2024/cafecalicut/demo/images/dummy3.jpg",
+        "name":"Creamy mushroom and rooster Wich",
+        "detail":"Fire roasted chicken, tossed with creamy mushrooms, Italian Grana, rocket leaves, in a freshly baked flatbread.",
+        "price":"49"
+      }
+    ]
+  }
+]

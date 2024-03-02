@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.food-container{
+  display: grid;
+  grid-template-columns: repeat(2,40%);
+  justify-content: center;
+  gap:2rem;
+}
+
+.food-item{
+  position: relative;
+}
+
+.food-item::after{
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 5px;
+  left: 0px;
+  bottom: 0px;
+  border-top: 1px dashed #d3d3d3;
+  border-bottom: 1px dashed #d3d3d3;
+}
+
+@media (max-width: 640px) { 
+  .food-container{
+    grid-template-columns: repeat(1,minmax(0,1fr));
+    justify-content: center;
+  }
+}
+.open-menu{
+  bottom: 0;
+  left: 45vw;
+  transform: translateY(70px);
+  transition: transform 0.5s;
+}
+.open-menu-active{
+  transform: translateY(0);
+}
