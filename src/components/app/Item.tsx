@@ -1,3 +1,6 @@
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 interface Itemtype{
   menu:string,
   dishes:DishType[],
@@ -28,7 +31,11 @@ function Item({
           return(
             <div key={num} className='food-item flex pb-6 gap-6' >
               <div className='w-[80%]'>
-                <img src={dishes[0].img} alt="" className='rounded-md' loading='lazy' />
+              <LazyLoadImage
+                alt={dishes[0].name+' image'}
+                effect="blur"
+                src={dishes[0].img}
+              />
               </div>
               <div className='flex flex-col'>
                 <h2 className='text-base' style={{fontFamily:'Quicksand'}}>{dishes[0].name}</h2>
