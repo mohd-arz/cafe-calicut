@@ -32,7 +32,7 @@ export function MenuDrawer({sliderRef}:DrawerProps) {
         top: 0,
         behavior: "smooth"
       });
-    },315)   
+    },350)   
     if (sliderRef.current) {
       sliderRef.current.swiper.slideTo(index);
     }

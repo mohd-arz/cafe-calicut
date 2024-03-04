@@ -35,6 +35,7 @@ function Item({
                 alt={dishes[0].name+' image'}
                 effect="blur"
                 src={dishes[0].img}
+                className='rounded-2xl xl:max-w-[80%] min-w-[100px]'
               />
               </div>
               <div className='flex flex-col'>
