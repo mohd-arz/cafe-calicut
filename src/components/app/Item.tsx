@@ -55,13 +55,12 @@ function Item({
               </DialogTrigger>
               <DialogContent>
                 <div key={num} className='food-item-modal flex flex-col pb-6 gap-6' >
-                  <div className=''>
                     <LazyLoadImage
                       alt={dishes[0].name+' image'}
                       effect="blur"
                       src={dishes[0].img}
+                      className='rounded-tl-lg rounded-tr-lg'
                     />
-                  </div>
                   <div className='flex flex-col m-4'>
                     <div className='flex justify-between'>
                       <h2 className='text-base' style={{fontFamily:'Quicksand'}}>{dishes[0].name}</h2>
