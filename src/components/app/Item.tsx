@@ -46,9 +46,9 @@ function Item({
                     className='rounded-2xl xl:max-w-[80%] min-w-[100px]'
                   />
                   </div>
-                  <div className='flex flex-col'>
+                  <div className='flex flex-col items-start'>
                     <h2 className='text-base' style={{fontFamily:'Quicksand'}}>{dishes[0].name}</h2>
-                    <p className='text-xs pt-2'>{dishes[0].detail}</p>
+                    <p className='text-xs pt-2 text-start'>{dishes[0].detail}</p>
                     <p className='mt-auto'>AED {dishes[0].price}</p>
                   </div>
                 </div>
