@@ -20,7 +20,6 @@ function Menu() {
       slidesPerView={1}
       ref={sliderRef}
       speed={700}
-      allowTouchMove={false}
     >
       {menuItems.map(item=>{
         return (
