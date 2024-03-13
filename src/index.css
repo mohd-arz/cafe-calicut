@@ -40,3 +40,7 @@
 .open-menu-active {
   transform: translateX(-50%) translateY(0); 
 }
+
+.menu-active{
+  background-color: rgb(29, 72, 109);
+}

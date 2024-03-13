@@ -1,6 +1,4 @@
-import menuItem from '../../json/menu.json';
 import { useRef,useEffect } from 'react';
-import { SwiperRef } from 'swiper/react';
 
 import { Button } from "@/components/ui/button"
 import {
@@ -14,10 +12,11 @@ import {
 } from "@/components/ui/drawer"
 
 interface DrawerProps {
-  sliderRef: React.RefObject<SwiperRef>;
+  menu:any
+  setIndex:any
 }
 
-export function MenuDrawer({sliderRef}:DrawerProps) {
+export function MenuDrawer({menu,setIndex}:DrawerProps) {
 
   const menuRef = useRef<HTMLButtonElement>(null);
 
@@ -26,16 +25,13 @@ export function MenuDrawer({sliderRef}:DrawerProps) {
       menuRef.current.classList.add('open-menu-active');
   },[])
 
-  function slideTo(index:number){
-    setTimeout(()=>{
-      window.scrollTo({
-        top: 0,
-        behavior: "smooth"
-      });
-    },350)   
-    if (sliderRef.current) {
-      sliderRef.current.swiper.slideTo(index);
-    }
+  function goTo(index){
+    document.querySelectorAll('.menu').forEach(item=>{
+      item.classList.remove('menu-active');
+    })
+    document.querySelector(`[data-index="${index}"]`)?.classList.add('menu-active')
+    console.log(document.querySelector(`[data-index="${index}"]`))
+    setIndex(index);
   }
 
   return (
@@ -50,14 +46,14 @@ export function MenuDrawer({sliderRef}:DrawerProps) {
           <DrawerHeader>
             <DrawerTitle className='text-center'>Menu</DrawerTitle>
           </DrawerHeader>
-            {menuItem.map((item,index)=>{
+            {menu && menu.map((item,index)=>{
               return(<div>
                   <DrawerClose asChild className=''>
-                    <div onClick={()=>slideTo(index)} className='flex justify-between mb-3 mx-10' style={{cursor:"pointer"}}>
+                    <div onClick={()=>goTo(index)} className='flex justify-between mb-3 mx-10 menu' data-index={index}  style={{cursor:"pointer"}}>
                       <div className="text-center">
-                        {item.menu}
+                        {item.name}
                         </div>
-                      <div>{item.dishes.length}</div>
+                      <div>{item.details.length}</div>
                     </div>
                   </DrawerClose>
                   </div>

@@ -5,6 +5,7 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { useEffect } from 'react';
 
 
 interface Itemtype{
@@ -22,51 +23,47 @@ interface DishType{
 function Item({
   menu,
   dishes,
-}:Itemtype)
+}:any)
 {
-  //Dummy count for Food Arr - 
-  const count = 10;
-  const foodArr = Array.from({length:count}, (_ , index) => index + 1);
   return (
     <main>
       <h1 className='text-3xl md:text-5xl text-center text-white px-0 py-4 font-serif shadow-gray-500 shadow-lg' style={{backgroundImage:`url("https://demosites.meridian.net.in/2024/cafecalicut/demo/images/bg1.jpg")`}}>
         {menu}
       </h1>
       <div className='food-container m-4 sm:m-6 md:m-8'>
-        {foodArr.map((num)=>{
+        {(dishes.length>0) && dishes.map((dish)=>{
           return(
             <Dialog>
               <DialogTrigger className='focus:outline-none' tabIndex={-1}>
-                <div key={num} className='food-item flex pb-6 gap-6' >
-                  <div className='w-[80%]'>
+                <div key={dish.id} className='food-item flex pb-6 gap-6' >
                   <LazyLoadImage
-                    alt={dishes[0].name+' image'}
+                    alt={dish.heading+' image'}
                     effect="blur"
-                    src={dishes[0].img}
-                    className='rounded-2xl xl:max-w-[80%] min-w-[100px]'
+                    src={"http://localhost:8000/storage/images/"+dish.image}
+                    className='rounded-2xl xl:max-w-[80%] w-[150px] h-[200px] object-cover'
+                    visibleByDefault={true}
                   />
-                  </div>
                   <div className='flex flex-col items-start'>
-                    <h2 className='text-base' style={{fontFamily:'Quicksand'}}>{dishes[0].name}</h2>
-                    <p className='text-xs pt-2 text-start'>{dishes[0].detail}</p>
-                    <p className='mt-auto'>AED {dishes[0].price}</p>
+                    <h2 className='text-base' style={{fontFamily:'Quicksand'}}>{dish.heading}</h2>
+                    <p className='text-xs pt-2 text-start'>{dish.description}</p>
+                    <p className='mt-auto'>AED {dish.price}</p>
                   </div>
                 </div>
               </DialogTrigger>
               <DialogContent>
-                <div key={num} className='food-item-modal flex flex-col pb-6 gap-6' >
+                <div key={dish.id} className='food-item-modal flex flex-col pb-6 gap-6' >
                     <LazyLoadImage
-                      alt={dishes[0].name+' image'}
+                      alt={dish.heading+' image'}
                       effect="blur"
-                      src={dishes[0].img}
+                      src={"http://localhost:8000/storage/images/"+dish.image}
                       className='rounded-tl-lg rounded-tr-lg'
                     />
                   <div className='flex flex-col m-4'>
                     <div className='flex justify-between'>
-                      <h2 className='text-base' style={{fontFamily:'Quicksand'}}>{dishes[0].name}</h2>
-                      <p className='mt-auto'>AED {dishes[0].price}</p>
+                      <h2 className='text-base' style={{fontFamily:'Quicksand'}}>{dish.heading}</h2>
+                      <p className='mt-auto'>AED {dish.price}</p>
                     </div>
-                      <p className='text-xs pt-2'>{dishes[0].detail}</p>
+                      <p className='text-xs pt-2'>{dish.description}</p>
                   </div>
                 </div>
             </DialogContent>
