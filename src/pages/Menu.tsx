@@ -27,7 +27,7 @@ function Menu() {
       menu &&
       <Item menu={menu[index].name} dishes={menu[index].details}/>
     }
-    <MenuDrawer menu={menu} setIndex={setIndex} />
+    <MenuDrawer menu={menu} setIndex={setIndex} i={index} />
     </>
   );
 }

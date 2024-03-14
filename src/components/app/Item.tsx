@@ -40,7 +40,7 @@ function Item({
                     alt={dish.heading+' image'}
                     effect="blur"
                     src={"http://localhost:8000/storage/images/"+dish.image}
-                    className='rounded-2xl xl:max-w-[80%] w-[150px] h-[200px] object-cover'
+                    className='rounded-2xl xl:max-w-[80%] w-[150px] h-[200px] object-cover flex-shrink-0'
                     visibleByDefault={true}
                   />
                   <div className='flex flex-col items-start'>

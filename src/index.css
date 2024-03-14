@@ -42,5 +42,8 @@
 }
 
 .menu-active{
-  background-color: rgb(29, 72, 109);
+  background-color: #d3d3d3;
+  border-radius: 5px;
+  padding: 0 1rem;
+  margin: 0 1.5rem .75rem 1.5rem;
 }

@@ -14,9 +14,10 @@ import {
 interface DrawerProps {
   menu:any
   setIndex:any
+  i:any
 }
 
-export function MenuDrawer({menu,setIndex}:DrawerProps) {
+export function MenuDrawer({menu,setIndex,i}:DrawerProps) {
 
   const menuRef = useRef<HTMLButtonElement>(null);
 
@@ -25,12 +26,7 @@ export function MenuDrawer({menu,setIndex}:DrawerProps) {
       menuRef.current.classList.add('open-menu-active');
   },[])
 
-  function goTo(index){
-    document.querySelectorAll('.menu').forEach(item=>{
-      item.classList.remove('menu-active');
-    })
-    document.querySelector(`[data-index="${index}"]`)?.classList.add('menu-active')
-    console.log(document.querySelector(`[data-index="${index}"]`))
+  function goTo(index:number){
     setIndex(index);
   }
 
@@ -49,7 +45,7 @@ export function MenuDrawer({menu,setIndex}:DrawerProps) {
             {menu && menu.map((item,index)=>{
               return(<div>
                   <DrawerClose asChild className=''>
-                    <div onClick={()=>goTo(index)} className='flex justify-between mb-3 mx-10 menu' data-index={index}  style={{cursor:"pointer"}}>
+                    <div onClick={()=>goTo(index)} className={`flex justify-between mb-3 mx-10 menu ${i==index ? 'menu-active':''}`} style={{cursor:"pointer"}}>
                       <div className="text-center">
                         {item.name}
                         </div>
