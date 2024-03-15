@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body{
+  font-family: 'Quicksand', sans-serif;;
+}
+
 .food-container{
   display: grid;
   grid-template-columns: repeat(2,40%);
@@ -35,6 +39,7 @@
   left: 50%;
   transform: translateX(-50%) translateY(70px); 
   transition: transform 0.5s;
+  /* background-image: url(../src/assets/bg1.jpg); */
 }
 
 .open-menu-active {
@@ -46,4 +51,9 @@
   border-radius: 5px;
   padding: 0 1rem;
   margin: 0 1.5rem .75rem 1.5rem;
+}
+
+.menu-header,.open-menu{
+  background-image: url(../src/assets/bg1.jpg);
+  font-family:'DM Serif Display', serif; 
 }

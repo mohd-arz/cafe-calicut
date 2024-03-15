@@ -26,7 +26,7 @@ function Item({
 {
   return (
     <main>
-      <h1 className='text-3xl md:text-5xl text-center text-white px-0 py-4 font-serif shadow-gray-500 shadow-lg' style={{backgroundImage:`url("https://demosites.meridian.net.in/2024/cafecalicut/demo/images/bg1.jpg")`}}>
+      <h1 className='text-3xl md:text-5xl text-center text-white px-0 py-4 font-serif shadow-gray-500 shadow-lg menu-header'>
         {menu}
       </h1>
       <div className='food-container m-4 sm:m-6 md:m-8'>
@@ -43,7 +43,7 @@ function Item({
                     visibleByDefault={true}
                   />
                   <div className='flex flex-col items-start'>
-                    <h2 className='text-base' style={{fontFamily:'Quicksand'}}>{dish.heading}</h2>
+                    <h2 className='text-base font-medium'>{dish.heading}</h2>
                     <p className='text-xs pt-2 text-start'>{dish.description}</p>
                     <p className='mt-auto'>AED {dish.price}</p>
                   </div>
@@ -54,12 +54,12 @@ function Item({
                     <LazyLoadImage
                       alt={dish.heading+' image'}
                       effect="blur"
-                      src={"http://localhost:8000/storage/images/"+dish.image}
+                      src={"https://cafecalicut.com/menu/storage/images/"+dish.image}
                       className='rounded-tl-lg rounded-tr-lg'
                     />
                   <div className='flex flex-col m-4'>
                     <div className='flex justify-between'>
-                      <h2 className='text-base' style={{fontFamily:'Quicksand'}}>{dish.heading}</h2>
+                      <h2 className='text-base font-medium'>{dish.heading}</h2>
                       <p className='mt-auto'>AED {dish.price}</p>
                     </div>
                       <p className='text-xs pt-2'>{dish.description}</p>

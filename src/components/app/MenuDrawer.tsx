@@ -54,7 +54,7 @@ export function MenuDrawer({menu,setIndex,i}:DrawerProps) {
   return (
     <Drawer>
       <DrawerTrigger asChild>
-        <Button ref={menuRef} className={`fixed rounded-full z-10 mb-4 open-menu`} style={{backgroundImage:`url("https://demosites.meridian.net.in/2024/cafecalicut/demo/images/bg1.jpg")`}}>
+        <Button ref={menuRef} className={`fixed rounded-full z-10 mb-4 open-menu`}>
           Open Menu
         </Button>
       </DrawerTrigger>

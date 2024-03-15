@@ -1,7 +1,9 @@
+import logo from '../../assets/logo.svg';
+
 function Header(){
   return (
     <header>
-      <img style={{width:"10rem",padding:"1rem"}} src={"https://demosites.meridian.net.in/2024/cafecalicut/demo/images/logo.svg"} alt="" />
+      <img style={{width:"10rem",padding:"1rem"}} src={logo} alt="cafe-calicut-logo" />
     </header>
   )
 }

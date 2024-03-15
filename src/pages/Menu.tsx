@@ -33,7 +33,6 @@ function Menu() {
   useEffect(()=>{
     axios.get(import.meta.env.VITE_BACKEND_URL+'/')
     .then(res=>{
-      console.log(res.data.data)
       return setMenu(res.data.data);
     })
   },[])
