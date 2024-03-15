@@ -1,15 +1,33 @@
-import { Swiper, SwiperSlide,SwiperRef } from 'swiper/react';
 import 'swiper/css';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Navigation, } from 'swiper/modules';
 import {MenuDrawer} from '../components/app/MenuDrawer';
 import Item from '../components/app/Item';
 import Header from '../components/app/Header';
 
+type ItemType = {
+  id: number,
+  catagory_id: number,
+  heading: string,
+  description: string,
+  price: number,
+  image: string,
+  updated_at: string,
+  created_at: string
+}
+
+type MenuType = {
+  id: number,
+  name: string,
+  image: string,
+  ordering_id: number,
+  updated_at: string,
+  created_at: string,
+  details: ItemType[]
+}
 
 function Menu() {
-  const [menu,setMenu] = useState();
+  const [menu,setMenu] = useState<MenuType[]>();
   const [index,setIndex] = useState(0);
 
   useEffect(()=>{

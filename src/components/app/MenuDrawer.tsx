@@ -17,6 +17,27 @@ interface DrawerProps {
   i:any
 }
 
+type ItemType = {
+  id: number,
+  catagory_id: number,
+  heading: string,
+  description: string,
+  price: number,
+  image: string,
+  updated_at: string,
+  created_at: string
+}
+
+type MenuType = {
+  id: number,
+  name: string,
+  image: string,
+  ordering_id: number,
+  updated_at: string,
+  created_at: string,
+  details: ItemType[]
+}
+
 export function MenuDrawer({menu,setIndex,i}:DrawerProps) {
 
   const menuRef = useRef<HTMLButtonElement>(null);
@@ -42,7 +63,7 @@ export function MenuDrawer({menu,setIndex,i}:DrawerProps) {
           <DrawerHeader>
             <DrawerTitle className='text-center'>Menu</DrawerTitle>
           </DrawerHeader>
-            {menu && menu.map((item,index)=>{
+            {menu && menu.map((item:MenuType,index:number)=>{
               return(<div>
                   <DrawerClose asChild className=''>
                     <div onClick={()=>goTo(index)} className={`flex justify-between mb-3 mx-10 menu ${i==index ? 'menu-active':''}`} style={{cursor:"pointer"}}>

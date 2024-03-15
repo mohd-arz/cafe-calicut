@@ -5,19 +5,18 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog"
-import { useEffect } from 'react';
 
 
-interface Itemtype{
-  menu:string,
-  dishes:DishType[],
-}
 
-interface DishType{
-  img:string,
-  name:string,
-  detail:string,
-  price:string,
+type DishType = {
+  id: number,
+  catagory_id: number,
+  heading: string,
+  description: string,
+  price: number,
+  image: string,
+  updated_at: string,
+  created_at: string
 }
 
 function Item({
@@ -31,7 +30,7 @@ function Item({
         {menu}
       </h1>
       <div className='food-container m-4 sm:m-6 md:m-8'>
-        {(dishes.length>0) && dishes.map((dish)=>{
+        {(dishes.length>0) && dishes.map((dish:DishType)=>{
           return(
             <Dialog>
               <DialogTrigger className='focus:outline-none' tabIndex={-1}>
@@ -39,7 +38,7 @@ function Item({
                   <LazyLoadImage
                     alt={dish.heading+' image'}
                     effect="blur"
-                    src={"http://localhost:8000/storage/images/"+dish.image}
+                    src={"https://cafecalicut.com/menu/storage/images/"+dish.image}
                     className='rounded-2xl xl:max-w-[80%] w-[150px] h-[200px] object-cover flex-shrink-0'
                     visibleByDefault={true}
                   />
