@@ -1,11 +1,14 @@
-import 'swiper/css';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import {MenuDrawer} from '../components/app/MenuDrawer';
 import Item from '../components/app/Item';
 import Header from '../components/app/Header';
+import { Swiper, SwiperSlide,SwiperRef } from 'swiper/react';
+import 'swiper/css';
+import { useRef } from 'react';
+import { Navigation, } from 'swiper/modules';
 
-type ItemType = {
+export type ItemType = {
   id: number,
   catagory_id: number,
   heading: string,
@@ -16,7 +19,7 @@ type ItemType = {
   created_at: string
 }
 
-type MenuType = {
+export type MenuType = {
   id: number,
   name: string,
   image: string,
@@ -28,7 +31,8 @@ type MenuType = {
 
 function Menu() {
   const [menu,setMenu] = useState<MenuType[]>();
-  const [index,setIndex] = useState(0);
+  const sliderRef = useRef<SwiperRef>(null);
+  const [index,setIndex] = useState<number>(0);
 
   useEffect(()=>{
     axios.get(import.meta.env.VITE_BACKEND_URL+'/')
@@ -40,11 +44,24 @@ function Menu() {
   return (
     <>
     <Header/>
-    {
-      menu &&
-      <Item menu={menu[index].name} dishes={menu[index].details}/>
-    }
-    <MenuDrawer menu={menu} setIndex={setIndex} i={index} />
+    <Swiper
+      modules={[Navigation]}
+      spaceBetween={50}
+      slidesPerView={1}
+      ref={sliderRef}
+      speed={1300}
+      autoHeight={true}
+      onSlideChange={(swiper)=>setIndex(swiper.activeIndex)}
+    >
+      {menu && menu.map(item=>{
+        return (
+          <SwiperSlide key={item.id}>
+            <Item menu={item.name} dishes={item.details}/>
+          </SwiperSlide>
+        )
+      })}
+    </Swiper>
+    <MenuDrawer sliderRef={sliderRef} menu={menu}  ind={index} setIndex={setIndex}/>
     </>
   );
 }

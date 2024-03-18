@@ -57,3 +57,9 @@ body{
   background-image: url(../src/assets/bg1.jpg);
   font-family:'DM Serif Display', serif; 
 }
+
+.food-item-modal img{
+  max-height: 70vh;
+  width: 100%;
+  object-fit: cover;
+}

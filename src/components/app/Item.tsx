@@ -5,7 +5,7 @@ import {
   DialogContent,
   DialogTrigger,
 } from "@/components/ui/dialog"
-
+import { memo } from 'react';
 
 
 type DishType = {
@@ -18,11 +18,15 @@ type DishType = {
   updated_at: string,
   created_at: string
 }
+interface ItemPropsType {
+  menu:string,
+  dishes:DishType[]
+}
 
-function Item({
+const Item = memo(function Item({
   menu,
   dishes,
-}:any)
+}:ItemPropsType)
 {
   return (
     <main>
@@ -72,6 +76,6 @@ function Item({
       </div>
     </main>
   )
-}
+});
 
 export default Item;
